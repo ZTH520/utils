@@ -1,0 +1,24 @@
+{
+  "name": "@zthCn/utils",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZTH520/utils.git"
+  },
+  "keywords": [],
+  "author": "zthCn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZTH520/utils/issues"
+  },
+  "homepage": "https://github.com/ZTH520/utils#readme",
+  "devDependencies": {
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6"
+  }
+}
