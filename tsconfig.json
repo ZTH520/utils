@@ -1,13 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": ["ESNext"],
-    "moduleResolution": "Node",
+    "target": "es2017",
+    "module": "esnext",
+    "lib": ["esnext", "DOM"],
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "types": ["node"]
+  },
+  "include": [
+    "src/**/*",
+    "*.d.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

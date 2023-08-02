@@ -1,24 +1,66 @@
 {
-  "name": "@zthCn/utils",
+  "name": "@cn_zth/utils",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsup"
-  },
+  "author": "zthCn",
+  "license": "MIT",
+  "homepage": "https://github.com/ZTH520/utils#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ZTH520/utils.git"
   },
-  "keywords": [],
-  "author": "zthCn",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ZTH520/utils/issues"
   },
-  "homepage": "https://github.com/ZTH520/utils#readme",
+  "keywords": [
+    "utils",
+    "typescript"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "build": "tsup",
+    "check": "esno scripts/verify-commit.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
   "devDependencies": {
+    "@antfu/eslint-config-ts": "^0.40.0",
+    "@types/node": "^20.4.5",
+    "conventional-changelog-cli": "^3.0.0",
+    "eslint": "^8.46.0",
+    "esno": "^0.17.0",
+    "lint-staged": "^13.2.3",
+    "picocolors": "^1.0.0",
+    "simple-git-hooks": "^2.9.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "pnpm run check"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix"
+    ]
   }
 }
